@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="332dp"
+        android:layout_height="114dp"
+        android:layout_gravity="center_horizontal"
+        app:srcCompat="@drawable/icon_taskapp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registro"
+        android:gravity="center_horizontal" />
+
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        android:id="@+id/etRegUsuNombreWrapper"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etRegUsuNombre"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Usuario"
+        android:id="@+id/etRegEmailWrapper"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/etRegEmail"
+            />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        app:passwordToggleEnabled="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/etRegUsuPasswordWrapper">
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:id="@+id/etRegUsuPassword"
+            />
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Confirmar Contraseña"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        app:passwordToggleEnabled="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/etRegUsuConfirmarWrapper">
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:id="@+id/etRegUsuConfirmar"
+            />
+    </android.support.design.widget.TextInputLayout>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text = "Tipo de Usuario"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"/>
+
+    <RadioGroup
+        android:id="@+id/rgTipo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:orientation="horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <RadioButton
+            android:id="@+id/rbTecnico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Tecnico" />
+
+        <RadioButton
+            android:id="@+id/rbNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Normal" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:orientation="horizontal"
+        android:layout_marginLeft="15dp"
+        android:gravity="center"
+        android:layout_marginRight="15dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancelar"
+            android:id="@+id/btnRegUsuCancelar"
+            android:paddingHorizontal="10pt"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:paddingHorizontal="10pt"
+            android:layout_marginLeft="12pt"
+            android:layout_height="wrap_content"
+            android:text="Registrar"
+            android:id="@+id/btnRegUsuario"/>
+    </LinearLayout>
+
+</LinearLayout>
