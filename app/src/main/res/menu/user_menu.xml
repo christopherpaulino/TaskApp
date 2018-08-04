@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/navCuenta"
+        android:title="Cuenta"
+        app:showAsAction="collapseActionView"/>
+    <item android:id="@+id/navCerrar"
+        android:title="Cerrar Sesion"
+        app:showAsAction="collapseActionView"/>
+    <item android:id="@+id/navReg"
+        android:title="Reg. Nuevo"
+        app:showAsAction="collapseActionView"/>
+
+</menu>

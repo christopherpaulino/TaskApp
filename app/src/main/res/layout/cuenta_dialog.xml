@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10pt">
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="159dp"
+        android:layout_height="151dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/ic_person_24dp"
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="39dp"
+        tools:ignore="VectorDrawableCompat" />
+
+
+        <TextView
+            android:id="@+id/tvCuentatipo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tecnico"
+            tools:layout_editor_absoluteX="167dp"
+            tools:layout_editor_absoluteY="151dp"
+            android:layout_gravity="center"
+            android:textSize="12pt"
+            android:textColor="@color/primary_text"/>
+
+        <TextView
+            android:id="@+id/tvCuentaUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Christopher Paulino"
+            android:textSize="10pt"
+            android:textColor="@color/primary_text"
+            tools:layout_editor_absoluteX="131dp"
+            tools:layout_editor_absoluteY="186dp"
+            android:layout_gravity="center"/>
+
+
+
+
+</LinearLayout>

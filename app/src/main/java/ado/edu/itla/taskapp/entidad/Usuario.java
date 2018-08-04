@@ -1,10 +1,16 @@
 package ado.edu.itla.taskapp.entidad;
 
+import java.io.Serializable;
+
 /**
  * Created by MESCyT on 9/6/2018.
  */
 
-public class Usuario {
+public class Usuario implements Serializable {
+
+    public Usuario() {
+
+    }
 
     public enum TipoUsuario{
         TECNICO,
@@ -15,6 +21,17 @@ public class Usuario {
     String email;
     TipoUsuario tipoUsuario;
     String password;
+
+    public Usuario(Integer id, String nombre, String email, TipoUsuario tipoUsuario, String password) {
+        this.id = id;
+        this.nombre = nombre;
+        this.email = email;
+        this.tipoUsuario = tipoUsuario;
+        this.password = password;
+    }
+
+    public Usuario(String s, String toString, String string, TipoUsuario normal) {
+    }
 
     public Integer getId() {
         return id;

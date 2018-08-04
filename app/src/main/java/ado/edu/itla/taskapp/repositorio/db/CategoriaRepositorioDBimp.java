@@ -32,6 +32,66 @@ public class CategoriaRepositorioDBimp implements CategoriaRepositorio, UsuarioR
     }
 
     @Override
+    public boolean login(String username, String password) {
+
+        SQLiteDatabase db = conexionDB.getReadableDatabase();
+
+        Cursor c = db.rawQuery("select * from usuario where email Like '" +username.trim()+"' and password like '"+password.trim()+"';",null);
+        c.moveToFirst();
+        db.close();
+        c.close();
+        if (c.getCount() >0){
+            return true;}
+
+        return false;
+    }
+
+    @Override
+    public Usuario tipoUsuario(String username) {
+
+        SQLiteDatabase db = conexionDB.getReadableDatabase();
+
+        Cursor c = db.rawQuery("select * from usuario where email like '"+username.trim()+"';",null);
+        c.moveToFirst();
+        Usuario usuario = new Usuario();
+        if (c.getCount()>0){
+            usuario.setId(c.getInt(0));
+            usuario.setNombre(c.getString(1));
+            usuario.setEmail(c.getString(2));
+            String tipo = c.getString(3);
+            if (tipo.equals(String.valueOf(Usuario.TipoUsuario.TECNICO))){
+                usuario.setTipoUsuario(Usuario.TipoUsuario.TECNICO);
+            }else if (tipo.equals(Usuario.TipoUsuario.NORMAL)){
+                usuario.setTipoUsuario(Usuario.TipoUsuario.NORMAL);
+            }
+        }
+
+        return usuario;
+    }
+
+    @Override
+    public boolean comprobarPassword(String password, String confirmar) {
+
+        return !password.trim().equals(confirmar.trim());
+    }
+
+    @Override
+    public boolean comprobarUsuario(String email) {
+
+        SQLiteDatabase db = conexionDB.getReadableDatabase();
+        Cursor c = db.rawQuery("select * from usuario where email like '"+email.trim().toLowerCase()+"'",null);
+        c.moveToFirst();
+        db.close();
+        c.close();
+
+        if (c.getCount() >0){
+            return true;
+        }
+
+        return false;
+    }
+
+    @Override
     public boolean guardar(Usuario usuario) {
 
         ContentValues cv  = new ContentValues();
@@ -47,6 +107,7 @@ public class CategoriaRepositorioDBimp implements CategoriaRepositorio, UsuarioR
         db.close();
         if (id.intValue() >0 ){
             usuario.setId(id.intValue());
+            Log.e("Usuario completo", usuario.toString());
             return true;
         }
 
